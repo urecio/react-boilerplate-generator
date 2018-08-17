@@ -1,0 +1,5 @@
+{{#asyncRequests}}
+    case constants.{{ constantCase name }}_RESPONSE:
+      return state.set('{{ resource }}', action.payload);
+{{/asyncRequests}}
+$1

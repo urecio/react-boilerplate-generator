@@ -1,0 +1,18 @@
+{
+  "name": "@rootcapital/react-boilerplate-generator",
+  "version": "0.0.22",
+  "description": "The purpose of this generator is to generate! :D :D :D: Jokes aside, it can generate routes, containers, components, etc... but also flows!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests yet\"",
+    "generate": "plop --plopfile ./index.js"
+  },
+  "keywords": [],
+  "author": "rootcapital",
+  "license": "ISC",
+  "dependencies": {
+    "node-plop": "0.5.4",
+    "plop": "1.7.3",
+    "lodash": "latest"
+  }
+}

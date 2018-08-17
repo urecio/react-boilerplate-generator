@@ -1,0 +1,19 @@
+{{#asyncRequests}}
+
+export function {{name}}Request(payload) {
+  return {
+    type: constants.{{ constantCase name }}_REQUEST,
+    payload,
+  };
+}
+
+export function {{name}}Response(payload) {
+  return {
+    type: constants.{{ constantCase name }}_RESPONSE,
+    payload,
+  };
+}
+
+{{/asyncRequests}}
+
+$1

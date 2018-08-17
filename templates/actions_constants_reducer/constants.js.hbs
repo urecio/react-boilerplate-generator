@@ -1,0 +1,14 @@
+/*
+ *
+ * {{ properCase name }} constants
+ *
+ */
+
+ {{#if wantAsyncRequests}}
+   {{#asyncRequests}}
+export const {{ constantCase name }}_REQUEST = 'app/{{ properCase name }}/{{ constantCase name }}_REQUEST';
+export const {{ constantCase name }}_RESPONSE = 'app/{{ properCase name }}/{{ constantCase name }}_RESPONSE';
+   {{/asyncRequests}}
+ {{else}}
+export const DEFAULT_ACTION = 'app/{{ properCase name }}/DEFAULT_ACTION';
+ {{/if}}

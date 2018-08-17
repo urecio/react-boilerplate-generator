@@ -1,0 +1,42 @@
+/*
+ *
+ * {{properCase name }}
+ *
+ */
+
+// react
+import { connect } from 'react-redux';
+
+{{#if wantActionsAndReducer}}
+import { createStructuredSelector } from 'reselect';
+import makeSelect{{properCase name}} from './selectors';
+{{/if}}
+
+{{#if wantAsyncRequests}}
+import * as actions from './actions';
+{{/if}}
+
+import {{ properCase name }}Component from './{{ properCase name }}Component';
+
+{{#if wantActionsAndReducer}}
+const mapStateToProps = createStructuredSelector({
+  {{name}}: makeSelect{{properCase name}}(),
+});
+{{/if}}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    dispatch,
+    {{#if wantAsyncRequests}}
+    {{#asyncRequests}}
+    {{ name }}: (payload) => dispatch(actions.{{ name }}Request(payload)),
+    {{/asyncRequests}}
+    {{/if}}
+  };
+}
+
+{{#if wantActionsAndReducer}}
+export default connect(mapStateToProps, mapDispatchToProps)({{ properCase name }}Component);
+{{else}}
+export default connect(null, mapDispatchToProps)({{ properCase name }}Component);
+{{/if}}

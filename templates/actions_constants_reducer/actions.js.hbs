@@ -1,0 +1,31 @@
+/*
+ *
+ * {{ properCase name }} actions
+ *
+ */
+
+import * as constants from './constants';
+
+{{#if wantAsyncRequests}}
+  {{#asyncRequests}}
+export function {{name}}Request(payload) {
+  return {
+    type: constants.{{ constantCase name }}_REQUEST,
+    payload,
+  };
+}
+export function {{name}}Response(payload) {
+  return {
+    type: constants.{{ constantCase name }}_RESPONSE,
+    payload,
+  };
+}
+
+  {{/asyncRequests}}
+{{else}}
+export function defaultAction() {
+  return {
+    type: constants.DEFAULT_ACTION,
+  };
+}
+{{/if}}

@@ -1,0 +1,14 @@
+{{#asyncRequests}}
+function* {{ name }}(action) {
+  try {
+    const response = yield call(api.{{ ../name }}{{ properCase name }}, action.payload || {});
+    yield put(actions.{{ name }}Response(response));
+  } catch (error) { console.error('error on {{ name }}', error); }
+}
+{{/asyncRequests}}
+
+// Individual exports for testing
+$1
+  {{#asyncRequests}}
+  yield takeLatest(constants.{{ constantCase name }}_REQUEST, {{ name }});
+  {{/asyncRequests}}

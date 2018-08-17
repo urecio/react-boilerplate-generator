@@ -1,0 +1,18 @@
+{{#putAsyncRequests}}
+/**
+ * {{ ../name }} {{ properCase name }}
+ * @return {object} The response data
+ * @throws {Error} If response status is not valid
+ */
+function {{ ../name }}{{ properCase name }}(payload) {
+  return request('{{ route }}', {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  }, true);
+}
+{{/putAsyncRequests}}
+
+$1

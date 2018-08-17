@@ -1,0 +1,4 @@
+$1
+    {{#asyncRequests}}
+    {{ name }}: (payload) => dispatch(actions.{{ name }}Request(payload)),
+    {{/asyncRequests}}

@@ -1,0 +1,21 @@
+import React, { PropTypes } from 'react';
+
+export default class {{ properCase name }} extends React.{{{ component }}} { // eslint-disable-line react/prefer-stateless-function
+
+  static propTypes = {
+    {{#if wantAsyncRequests}}
+      {{#asyncRequests}}
+      {{name}}: PropTypes.func.isRequired,
+      {{/asyncRequests}}
+    {{/if}}
+    dispatch: PropTypes.func.isRequired,
+  };
+
+  render() {
+    return (
+      <div>
+        {{ properCase name }} component
+      </div>
+    );
+  }
+}

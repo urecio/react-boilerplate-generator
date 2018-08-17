@@ -1,0 +1,17 @@
+{{#getAsyncRequests}}
+/**
+ * {{ ../name }} {{ properCase name }} request
+ * @return {object} The response data
+ * @throws {Error} If response status is not valid
+ */
+function {{ ../name }}{{ properCase name }}(payload) {
+  return request(`{{ route }}?${paramsToQueryString(payload)}`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  }, true);
+}
+{{/getAsyncRequests}}
+
+$1
